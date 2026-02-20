@@ -18,6 +18,10 @@ public class DialogManager {
 
     public static void sayRandom(VillagerEntity villager) {
         String msg = DIALOGS[RANDOM.nextInt(DIALOGS.length)];
-        villager.sendMessage(Text.literal(msg), false);
-    }
+        if (villager.getWorld() instanceof ServerWorld serverWorld) {
+    serverWorld.getPlayers().forEach(player -> {
+        if (player.squaredDistanceTo(villager) < 100) {
+            player.sendMessage(Text.literal(msg), false);
+        }
+    });
 }
