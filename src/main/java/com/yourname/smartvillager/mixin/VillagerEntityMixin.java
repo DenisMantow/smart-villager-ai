@@ -12,10 +12,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class VillagerEntityMixin {
 
     @Inject(method = "initGoals", at = @At("TAIL"))
-    private void smartvillager$addDefendGoal(CallbackInfo ci) {
-        VillagerEntity villager = (VillagerEntity)(Object)this;
-        GoalSelector goalSelector = villager.goalSelector;
+    private void addSmartGoals(CallbackInfo ci) {
+    VillagerEntity villager = (VillagerEntity)(Object)this;
 
-        goalSelector.add(2, new DefendVillageGoal(villager));
+    villager.goalSelector.add(1, new DefendVillageGoal(villager));
     }
 }
