@@ -3,9 +3,8 @@
   "id": "smartvillager",
   "version": "1.0.0",
   "name": "Smart Villager AI",
-  "description": "Villagers that think, defend, build, and talk.",
-  "authors": ["YourName"],
-  "environment": "*",
+  "description": "Villagers that think, defend, and interact",
+  "authors": ["yourname"],
   "entrypoints": {
     "main": [
       "com.yourname.smartvillager.SmartVillagerMod"
@@ -14,6 +13,7 @@
   "depends": {
     "fabricloader": ">=0.15.0",
     "fabric": "*",
-    "minecraft": "1.20.1"
+    "minecraft": "1.21.4"
   }
 }
+
